@@ -1,11 +1,13 @@
+#Encoder/Decoder App By: Blake Coppens and Evan Harden
+
 userPass = ''
 convertedPass = ''
-def encodeFunction(): # This is my encoder function, Feel free to add your decode function or just to put it in the main function.
+def encodeFunction(): # Blake Coppens' Encoder Function
     global userPass, convertedPass
     userPass = input("Please enter your password.\n")
     if len(userPass) > 8:
         print("Error! User password is longer than 8 digits.\nShortening to 8 digits...")
-        userPass = userPass[:8]
+        userPass = userPass[:8] #Shortens the length of the password to 8 digits.
     for i in userPass:
         convertednum = int(i)+3
         if convertednum >9:
@@ -18,6 +20,8 @@ def encodeFunction(): # This is my encoder function, Feel free to add your decod
         convertedPass += str(convertednum)
     print(f"The result is: {convertedPass}") # IDK if this needs to be here but in case its just here to show that it works.
     return convertedPass
+
+
 ##def decodeFunction():
     #Place your code here
 
@@ -29,8 +33,7 @@ def main(): # This is the main loop that will be repeated, add an if statement t
         decodeFunction()
     else:
         print("Invalid Selection.")
-    UserInput = 0    
         
 
-while 1==1:
+if __name__ == '__main__': #Unit test
     main()
